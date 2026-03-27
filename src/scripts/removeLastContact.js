@@ -1,10 +1,10 @@
-import { getAllContacts } from './getAllContacts.js';
-import updateContacts from './updateContacts.js';
+import { readContacts } from '../utils/readContacts.js';
+import { writeContacts } from '../utils/writeContact.js';
 
 export const removeLastContact = async () => {
-  const contactsList = await getAllContacts();
+  const contactsList = await readContacts();
   contactsList.pop();
-  await updateContacts(contactsList);
+  await writeContacts(contactsList);
 };
 
 removeLastContact();
